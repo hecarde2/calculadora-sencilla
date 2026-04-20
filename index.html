@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h3>Calculadora de 3 Campos</h3>
+
+  <input type="number" id="n1" placeholder="N° 1" style="width: 60px;">
+  
+  <select id="op">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+
+  <input type="number" id="n2" placeholder="N° 2" style="width: 60px;">
+  
+  <button onclick="calcular()">=</button>
+  
+  <strong id="res">0</strong>
+
+  <script>
+    function calcular() {
+      const v1 = parseFloat(document.getElementById('n1').value);
+      const v2 = parseFloat(document.getElementById('n2').value);
+      const op = document.getElementById('op').value;
+      let r = 0;
+
+      if (op === '+') r = v1 + v2;
+      if (op === '-') r = v1 - v2;
+      if (op === '*') r = v1 * v2;
+      if (op === '/') r = v1 / v2;
+
+      document.getElementById('res').innerText = r;
+    }
+  </script>
+</body>
+</html>
